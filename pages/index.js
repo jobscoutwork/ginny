@@ -86,8 +86,9 @@ export default function Home() {
       <Box
         sx={{ my: 4, display: "flex", flexDirection: "column", height: "90vh" }}
       >
-        <Typography variant="h4" gutterBottom sx={{ color: "#fff" }}>
-          Chat with GPT4 For Free
+        <Typography variant="h3" gutterBottom sx={{ color: "red" ,fontWeight:'bold'}}>
+  
+          Chat GPT4 For Free
         </Typography>
         <div>
           We are getting alot of traffic... so your responses may get bit delayed. please wait patiently 
