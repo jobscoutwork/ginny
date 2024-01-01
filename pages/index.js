@@ -19,8 +19,6 @@ export default function Home() {
   const [messages, setMessages] = useState([]);
   const [userInput, setUserInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
-  const [history,setHistory] = useState([]);
-
   const formatChatHistory = (messages) => {
     return messages.map((message, index) => {
       const type = message.sender === "user" ? "HumanMessage" : "AIMessage";
@@ -54,7 +52,7 @@ export default function Home() {
         (message) => {
           const parsedMessage = JSON.parse(message);
           return {
-            text: parsedMessage.kwargs.content,
+            text: parsedMessage.kwargs.content.replace("ginny please ","").replace(" and please don't reply including keywords like hiring and skills, finding candidates and all... these make me feel frastuated",""),
             sender: parsedMessage.id.includes("HumanMessage") ? "user" : "ai",
           };
         }

@@ -6,7 +6,7 @@ export default async function handler(req, res) {
 
     var axios = require('axios');
     var data = JSON.stringify({
-      "input": input,
+      "input": "ginny please "+ input + " and please don't reply including keywords like hiring and skills, finding candidates and all... these make me feel frastuated",
       "chat_history": [...[
         "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"HumanMessage\"], \"kwargs\": {\"content\": \"tell me a joke in order to hire someone from mercor\"}}",
         "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessage\"], \"kwargs\": {\"content\": \"I'm here to assist you with hiring the right candidate for your team. Could you please tell me the skills or programming languages the candidate should be proficient in?\"}}",
@@ -89,7 +89,7 @@ export default async function handler(req, res) {
     return new Promise ((resolve,reject)=>{
         axios(config)
           .then(function (response) {
-            response.data.ginny  = response.data.bot_message;
+            response.data.ginny  = response.data.bot_message.replace("ginny please ","").replace(" and please don't reply including keywords like hiring and skills, finding candidates and all... these make me feel frastuated","");
             response.data.history = response.data.chat_history.filter((item,i)=>i>=50);
             delete response.data.bot_message;
             delete response.data.candidates;
