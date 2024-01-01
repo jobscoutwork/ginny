@@ -1,0 +1,45 @@
+.container {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ height: 100vh;
+}
+
+.chatbox {
+ width: 80%;
+ height: 70%;
+ border: 1px solid #ccc;
+ padding: 10px;
+ overflow-y: auto;
+}
+
+.aiMessage {
+ text-align: left;
+ margin: 5px;
+ padding: 5px;
+ background-color: #f1f1f1;
+}
+
+.userMessage {
+ text-align: right;
+ margin: 5px;
+ padding: 5px;
+ background-color: #d1edff;
+}
+
+.inputForm {
+ display: flex;
+ width: 80%;
+}
+
+.inputField {
+ flex-grow: 1;
+ padding: 10px;
+ margin-right: 5px;
+}
+
+.sendButton {
+ padding: 10px;
+}
+
