@@ -45,6 +45,8 @@ export default function Home() {
       const proxyResponse = await axios.post("/api/ginny", {
         input: userInput,
         history: formattedChatHistory?.length > 0 ? formattedChatHistory : null,
+      },{
+        timeout:30000,
       });
       
       // Parse the chat history from the response
